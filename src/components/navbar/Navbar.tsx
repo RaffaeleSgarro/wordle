@@ -3,6 +3,7 @@ import {
   ChartBarIcon,
   CogIcon,
   InformationCircleIcon,
+  HomeIcon
 } from '@heroicons/react/outline'
 
 import { ENABLE_ARCHIVED_GAMES } from '../../constants/settings'
@@ -25,6 +26,9 @@ export const Navbar = ({
     <div className="navbar MainNavbar">
       <div className="navbar-content px-5 short:h-auto">
         <div className="flex">
+          <a href="https://www.pediatria.it/pediagames/">
+            <HomeIcon className="h-6 w-6 cursor-pointer dark:stroke-white mr-2" />
+          </a>
           <InformationCircleIcon
             className="h-6 w-6 cursor-pointer dark:stroke-white"
             onClick={() => setIsInfoModalOpen(true)}
