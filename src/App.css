@@ -3,8 +3,7 @@ html.dark {
 }
 
 #root {
-  background-image: url(./images/xmas-bg-256.png);
-  background-repeat: repeat;
+  background-color: #EFF1F5;
 }
 
 .MainNavbar {
