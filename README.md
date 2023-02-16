@@ -1,9 +1,3 @@
-# React Wordle
-
-This is a clone project of the popular word guessing game we all know and love. Made using React, Typescript, and Tailwind.
-
-[**Try out the demo!**](https://reactle.vercel.app/)
-
 ## Build and run
 
 ### To Run Locally:
@@ -35,6 +29,10 @@ $> docker run -d -p 80:8080  --name reactle-prod reactle:prod
 ```
 
 Open [http://localhost](http://localhost) in browser. See the [entry in the FAQ](#why-does-sharing-of-results-not-work) below about requirements for sharing of results.
+
+#### Italian dictionary
+
+Italian dictionary taken from [https://github.com/RaffaeleSgarro/paroleitaliane](https://github.com/RaffaeleSgarro/paroleitaliane)
 
 ## FAQ
 
