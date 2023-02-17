@@ -1,3 +1,4 @@
+// import { VALID_GUESSES } from '@/constants/validGuesses'
 import {
   addDays,
   differenceInDays,
@@ -10,14 +11,38 @@ import queryString from 'query-string'
 
 import { ENABLE_ARCHIVED_GAMES } from '../constants/settings'
 import { NOT_CONTAINED_MESSAGE, WRONG_SPOT_MESSAGE } from '../constants/strings'
-import { VALID_GUESSES } from '../constants/validGuesses'
+// import { VALID_GUESSES } from '../constants/validGuesses'
 import { WORDS } from '../constants/wordlist'
 import { getToday } from './dateutils'
 import { getGuessStatuses } from './statuses'
 
+const VALID_GUESSES: string[] = []
+
 // 1 January 2022 Game Epoch
 export const firstGameDate = new Date(2022, 0)
 export const periodInDays = 1
+
+export const loadValidGuesses = async () => {
+  const response = await fetch("/pediagames/wordle/validGuesses.json");
+  if (!response.ok) {
+    throw new Error("Failed to load data");
+  }
+  const data = await response.json();
+  if (!Array.isArray(data)) {
+    throw new Error("Data is not an array");
+  }
+  const validGuesses = data.map((item: any) => {
+    if (typeof item !== "string") {
+      throw new Error("Array contains non-string item");
+    }
+    return item;
+  });
+  const chunkSize = 10000;
+  for (let i = 0; i < validGuesses.length; i += chunkSize) {
+    const chunk = validGuesses.slice(i, i + chunkSize);
+    VALID_GUESSES.push(...chunk);
+  }
+}
 
 export const isWordInWordList = (word: string) => {
   return (

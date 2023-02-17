@@ -3,14 +3,15 @@ import './index.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './App'
+// TODO remove import App from './App'
 import { AlertProvider } from './context/AlertContext'
 import reportWebVitals from './reportWebVitals'
+import SplashScreen from './SplashScreen'
 
 ReactDOM.render(
   <React.StrictMode>
     <AlertProvider>
-      <App />
+      <SplashScreen />
     </AlertProvider>
   </React.StrictMode>,
   document.getElementById('root')
