@@ -7,5 +7,6 @@ html.dark {
 }
 
 .MainNavbar {
-  background-color: white;
+  background-color: rgb(53,149,246);
+  color: white;
 }
