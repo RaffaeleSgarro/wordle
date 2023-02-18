@@ -6,29 +6,17 @@ Clone the repository and perform the following command line actions:
 
 ```bash
 $> cd react-wordle
-$> npm install
-$> npm run start
+$> yarn install
+$> yarn run start
 ```
 
-### To build/run docker container:
+### To deploy
 
-#### Development
+Create the distribution folder, ZIP it, upload to server and extract:
 
 ```bash
-$> docker build -t reactle:dev -f docker/Dockerfile .
-$> docker run -d -p 3000:3000 --name reactle-dev reactle:dev
+$> yarn run build
 ```
-
-Open [http://localhost:3000](http://localhost:3000) in browser.
-
-#### Production
-
-```bash
-$> docker build --target=prod -t reactle:prod -f docker/Dockerfile .
-$> docker run -d -p 80:8080  --name reactle-prod reactle:prod
-```
-
-Open [http://localhost](http://localhost) in browser. See the [entry in the FAQ](#why-does-sharing-of-results-not-work) below about requirements for sharing of results.
 
 #### Italian dictionary
 
