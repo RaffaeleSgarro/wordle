@@ -17,12 +17,16 @@ class Server {
     });
   }
 
-  async saveGameWon(numero_di_tentativi: number) {
-    // https://www.pediatria.it/pediagames/wordle-ajax/partita-finita.asp?ha_indovinato_la_parola_segreta=True&numero_di_tentativi=4
+  async saveGameWon(numero_di_tentativi: number): Promise<void> {
+    await fetch("https://www.pediatria.it/pediagames/wordle-ajax/partita-finita.asp?ha_indovinato_la_parola_segreta=True&numero_di_tentativi=" + numero_di_tentativi,
+      { mode: "cors", method: "POST" }
+    )
   }
 
-  async saveGameLost() {
-    // https://www.pediatria.it/pediagames/wordle-ajax/partita-finita.asp?ha_indovinato_la_parola_segreta=False
+  async saveGameLost(): Promise<void> {
+    await fetch("https://www.pediatria.it/pediagames/wordle-ajax/partita-finita.asp?ha_indovinato_la_parola_segreta=False",
+      { mode: "cors", method: "POST" }
+    )
   }
 }
 

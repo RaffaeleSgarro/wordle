@@ -53,6 +53,7 @@ import {
   solutionGameDate,
   unicodeLength,
 } from './lib/words'
+import Server from './server'
 
 function App() {
   const isLatestGame = getIsLatestGame()
@@ -171,6 +172,7 @@ function App() {
 
   useEffect(() => {
     if (isGameWon) {
+      Server.saveGameWon(guesses.length)
       const winMessage =
         WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
       const delayMs = REVEAL_TIME_MS * solution.length
@@ -182,6 +184,7 @@ function App() {
     }
 
     if (isGameLost) {
+      Server.saveGameLost()
       setTimeout(() => {
         setIsStatsModalOpen(true)
       }, (solution.length + 1) * REVEAL_TIME_MS)
