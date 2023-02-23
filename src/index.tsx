@@ -7,6 +7,10 @@ import { AlertProvider } from './context/AlertContext'
 import reportWebVitals from './reportWebVitals'
 import SplashScreen from './SplashScreen'
 
+if ((window as any).USER_ID === '') {
+  (window as any).location = 'https://www.pediatria.it/pediagames/wordle.asp'
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <AlertProvider>
