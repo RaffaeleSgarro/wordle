@@ -1,9 +1,7 @@
 import {
   CalendarIcon,
   ChartBarIcon,
-  CogIcon,
   InformationCircleIcon,
-  HomeIcon,
   DotsVerticalIcon
 } from '@heroicons/react/outline'
 
