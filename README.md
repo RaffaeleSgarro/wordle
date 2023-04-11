@@ -10,6 +10,8 @@ $> yarn install
 $> yarn run start
 ```
 
+IMPORTANT: Point your browser to http://localhost:3000/pediagames/wordle.asp
+
 ### To deploy
 
 Create the distribution folder, ZIP it, upload to server and extract:

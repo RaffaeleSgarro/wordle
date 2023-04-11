@@ -65,7 +65,9 @@
     "postcss": "^8.4.5",
     "prettier": "2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
-    "tailwindcss": "^3.0.12"
+    "tailwindcss": "^3.0.12",
+    "http-proxy-middleware": "^2.0.6",
+    "morgan": "^1.10.0"
   },
   "lint-staged": {
     "src/*.{ts,tsx,js,jsx,css,md}": "prettier --write"

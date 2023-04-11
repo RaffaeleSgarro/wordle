@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals'
 import SplashScreen from './SplashScreen'
 
 if ((window as any).USER_ID === '') {
-  (window as any).location = 'https://www.pediatria.it/pediagames/wordle.asp'
+  (window as any).location = '/pediagames/wordle.asp'
 }
 
 ReactDOM.render(
